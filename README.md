@@ -2,9 +2,9 @@
 ### Installation
 Installing Jenkins Using Docker Tutorial: https://www.jenkins.io/doc/book/installing/docker/
 - Create a bridge network in Docker:
-	- docker network create jenkins
+	- `docker network create jenkins`
 - To verify it: 
-	- docker network ls
+	- `docker network ls`
 - Create the Dockerfile
 ```
 		FROM jenkins/jenkins:2.440.1-jdk17
@@ -22,7 +22,7 @@ Installing Jenkins Using Docker Tutorial: https://www.jenkins.io/doc/book/instal
 ```
 
 - Build a new docker image from this Dockerfile and assign the image a meaningful name, e.g. "myjenkins-blueocean:2.440.1-1":
-	- docker build -t myjenkins-blueocean:2.440.1-1 .
+	- `docker build -t myjenkins-blueocean:2.440.1-1 .` 
 - If you have not yet downloaded the official Jenkins Docker image, the above process automatically downloads it for you.
 
 - Run your own myjenkins-blueocean:2.440.1-1 image as a container in Docker using the following docker run command:
@@ -37,13 +37,13 @@ Installing Jenkins Using Docker Tutorial: https://www.jenkins.io/doc/book/instal
 ```
 
 - Check if docker container is running: 
-	- docker ps
+	- `docker ps`
 
 - Browse to http://localhost:8080 (or whichever port you configured for Jenkins when installing it) and wait until the **Unlock Jenkins** page appears. 
-- To unlock Jenkins, you need to retrieve the administrator password from the specified file. In our case, the password is stored in the file /var/jenkins_home/secrets/initialAdminPassword within the Jenkins home directory.
-- Access the Jenkins container: docker exec -it jenkins-blueocean sh
-- Once inside the container, navigate to the directory containing the password file: cd /var/jenkins_home/secrets
-- View the content of the initialAdminPassword file: cat initialAdminPassword
+- To unlock Jenkins, you need to retrieve the administrator password from the specified file. In our case, the password is stored in the file `/var/jenkins_home/secrets/initialAdminPassword` within the Jenkins home directory.
+- Access the Jenkins container: `docker exec -it jenkins-blueocean sh`
+- Once inside the container, navigate to the directory containing the password file: `cd /var/jenkins_home/secrets`
+- View the content of the initialAdminPassword file: `cat initialAdminPassword`
 	- Password: b79f30de0329417796e357ed160d1066
 - Install Jenkins with the suggested plugins.
 - Create First Admin User
