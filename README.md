@@ -39,7 +39,7 @@ Installing Jenkins Using Docker Tutorial: https://www.jenkins.io/doc/book/instal
 - Check if docker container is running: 
 	- docker ps
 
-- Browse to http://localhost:8080 (or whichever port you configured for Jenkins when installing it) and wait until the **Unlock Jenkins** page appears. 
+- Browse to http://localhost:8080 (or whichever port you configured for Jenkins when installing it) and wait until the **Unlock Jenkins** page appears. 
 - To unlock Jenkins, you need to retrieve the administrator password from the specified file. In our case, the password is stored in the file /var/jenkins_home/secrets/initialAdminPassword within the Jenkins home directory.
 - Access the Jenkins container: docker exec -it jenkins-blueocean sh
 - Once inside the container, navigate to the directory containing the password file: cd /var/jenkins_home/secrets
@@ -57,8 +57,11 @@ Installing Jenkins Using Docker Tutorial: https://www.jenkins.io/doc/book/instal
 	- Download progress: click on "Restart Jenkins when installation is complete and no jobs are running".
 
 ### Setting up Declarative Pipelines using Groovy
-Jenkins Python Pipeline Tutorial: https://www.youtube.com/watch?v=6njM8g5hKuk
+Useful tutorials: 
+- [Jenkins Python Pipeline Tutorial](https://www.youtube.com/watch?v=6njM8g5hKuk)
+- [Learn Jenkins! Complete Jenkins Course - Zero to Hero](https://www.youtube.com/watch?v=6YZvp2GwT0A)
 
+Steps:
 - New Item
 - Pipeline
 - Enter an item name
