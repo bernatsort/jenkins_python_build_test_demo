@@ -1,4 +1,6 @@
 ## Jenkins Python Build Test Demo
+This project automates the continuous integration (CI) process for Python projects using Jenkins, Python, pytest, GitHub, and Docker. It guides users through setting up Jenkins using Docker, configuring pipelines for building and testing Python applications, ensuring Python environment setup within Docker, integrating with GitHub for automatic triggering of builds, and visualizing the pipeline progress through Blue Ocean.
+
 ### Installation
 Installing Jenkins Using Docker Tutorial: https://www.jenkins.io/doc/book/installing/docker/
 - Create a bridge network in Docker:
