@@ -62,6 +62,7 @@ Jenkins Python Pipeline Tutorial: https://www.youtube.com/watch?v=6njM8g5hKuk
 - New Item
 - Pipeline
 - Enter an item name
+#### Option 1: Create the pipeline script directly into the Jenkins UI
 - Pipeline
 	- Pipeline script
 		- write your pipeline here
@@ -90,3 +91,14 @@ Jenkins Python Pipeline Tutorial: https://www.youtube.com/watch?v=6njM8g5hKuk
 	-  apt-get install python3-pip 
 - If pytest is not installed: 
 	- apt install python3-pytest
+#### Option 2: Create the pipeline script using a Jenkins file (preferred method)
+- We have a Jenkins file in the source repository (GitHub repository) and we point this pipeline over to that Jenkins file and it takes in our pipeline script there.
+- Configuration --> Pipeline
+- Pipeline script from SCM
+- SCM: Git
+- Repository URL: https://github.com/bernatsort/jenkins_python_build_test_demo.git
+- Branch Specifier (blank for 'any'): main
+- Script Path: directory where we have the Jenkinsfile (in this case Jenkinsfile).
+- Now, for future builds, next time we do a git commit and push to GitHub, this build should trigger automatically. 
+- Go to Console Output (Click the tick icon in the Build history).
+- Then, Open Blue Ocean. The pipeline has all the different stages. If we click on each individual step we can see exactly what happened in these stages. Blue Ocean is pretty good for giving us a nice interface so we can go and look at the build and look what happened in each of stages of the build. 
