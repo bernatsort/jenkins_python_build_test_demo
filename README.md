@@ -82,18 +82,18 @@ Steps:
 			- Sample Step: sh:Shell Script
 
 - To see if Python is installed inside the Docker container: 
-	- Access the Docker container as a root user where Jenkins is running: docker exec -it -u 0 jenkins-blueocean bash
-	- python3
+	- Access the Docker container as a root user where Jenkins is running: `docker exec -it -u 0 jenkins-blueocean bash`
+	- `python3`
 	- If not installed: 
-		- Update the package repository: apt-get update
-		- Install Python: apt-get install -y python3
-		- After the installation is complete, verify that Python is installed by running the following command: python3 --version
-	- To exit from inside a Docker container's shell: exit
-- The 'source' directory is structured as a Python package with an __init__.py file inside it. This allows Python to recognize it as a module. If it's not already a package, create an empty __init__.py file inside the 'source' directory.
+		- Update the package repository: `apt-get update`
+		- Install Python: `apt-get install -y python3`
+		- After the installation is complete, verify that Python is installed by running the following command: `python3 --version`
+	- To exit from inside a Docker container's shell: `exit`
+- The 'source' directory is structured as a Python package with an `__init__.py` file inside it. This allows Python to recognize it as a module. If it's not already a package, create an empty `__init__.py` file inside the 'source' directory.
 - If pip is not installed inside the Docker container:
-	-  apt-get install python3-pip 
+	-  `apt-get install python3-pip`
 - If pytest is not installed: 
-	- apt install python3-pytest
+	- `apt install python3-pytest`
 #### Option 2: Create the pipeline script using a Jenkins file (preferred method)
 - We have a Jenkins file in the source repository (GitHub repository) and we point this pipeline over to that Jenkins file and it takes in our pipeline script there.
 - Configuration --> Pipeline
