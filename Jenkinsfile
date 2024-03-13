@@ -1,5 +1,22 @@
+'''
+In Jenkins, SCM stands for "Source Code Management". 
+This option instructs Jenkins to obtain your Pipeline 
+from Source Control Management (SCM), which will be your locally 
+cloned Git repository. 
+
+We want Jenkins pull the SCM:
+Jenkins will reach out to GitHub and if there are any changes 
+on the repository it is going to go through the build. 
+
+We want to pull every 2 min: once every 2 min if there is new
+code on GitHub, it is going to run the build. 
+'''
 pipeline {
     agent any
+
+    triggers {
+        pollSCM '*/2 * * * *' // every 2 min
+    }
 
     stages {
         stage('Checkout') {
